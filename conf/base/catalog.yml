@@ -52,6 +52,6 @@ test_data:
   type: pandas.CSVDataset
   filepath: data/01_raw/dengue_features_test.csv
 
-train_data_dropna:
+results:
   type: pandas.CSVDataset
-  filepath: data/02_intermediate/train_data_dropna.csv
+  filepath: data/07_model_output/result.csv
