@@ -54,4 +54,4 @@ test_data:
 
 results:
   type: pandas.CSVDataset
-  filepath: data/07_model_output/result.csv
+  filepath: data/07_model_output/results.csv

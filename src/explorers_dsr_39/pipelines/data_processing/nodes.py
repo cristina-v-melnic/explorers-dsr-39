@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from sklearn.ensemble import RandomForestRegressor
 
 def get_train_data(features, labels):
@@ -42,8 +43,14 @@ def get_dt_col(X , column='week_start_date', format='%Y-%m-%d'):
 
 def get_model(X, y, feats):
     regr = RandomForestRegressor(random_state=0)
+    X.city = np.where(X.city == 'sj', 1, 0)
     regr.fit(X[feats], y)
     return regr
 
 def get_pred(regr, test_data, feats):
-    predictions = regr.predict(test_data[feats])
+    tt = test_data.copy()
+    tt.city = np.where(tt.city == 'sj', 1, 0)
+    predictions = np.round(np.exp(regr.predict(tt[feats]))).astype(int) - 1
+    return test_data[['city','year','weekofyear']].join(pd.DataFrame({'total_cases': predictions}))
+
+    

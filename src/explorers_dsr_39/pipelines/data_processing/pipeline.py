@@ -10,7 +10,7 @@ def create_pipeline(**kwargs) -> Pipeline:
                 func=get_train_data,
                 inputs=["train_data","labels"],
                 outputs=["data_clean_dt", "X", "y"],
-                name="pipeline_part1",
+                name="preprocess",
             ),
             node(
                 func=get_model,
