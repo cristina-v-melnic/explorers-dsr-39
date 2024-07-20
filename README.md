@@ -39,9 +39,9 @@ Make sure to select the above created kernel to run the notebooks.
 ## Getting the best results
 Our best results can be reproduced by running all the cells in the following notebooks:
 ```
-notebooks\July-19-Model-both-cities
+notebooks\July-19-Model-both-cities.ipynb
 
-notebooks\model_by_city
+notebooks\models_by_city.ipynb
 ```
 
 Upon running all the contents, an ouput file in the submission format will appear in the same folder.
