@@ -2,97 +2,45 @@
 
 ## Overview
 
-This is your new Kedro project, which was generated using `kedro 0.19.6`.
+This is a development of solution for the ["DengAI: Predicting Disease Spread"](https://www.drivendata.org/competitions/44/dengai-predicting-disease-spread/) competition as coursework in the [Data Science Retreat](https://datascienceretreat.com/) Batch-39. 
 
-Take a look at the [Kedro documentation](https://docs.kedro.org) to get started.
-
-## Rules and guidelines
-
-In order to get the best out of the template:
-
-* Don't remove any lines from the `.gitignore` file we provide
-* Make sure your results can be reproduced by following a [data engineering convention](https://docs.kedro.org/en/stable/faq/faq.html#what-is-data-engineering-convention)
-* Don't commit data to your repository
-* Don't commit any credentials or your local configuration to your repository. Keep all your credentials and local configuration in `conf/local/`
+Authored by Julien Henry and Cristina Melnic 
 
 ## How to install dependencies
+1. Create a new conda environment and install python.
 
-Declare any dependencies in `requirements.txt` for `pip` installation.
+```
+conda create -n <env-name>
 
-To install them, run:
+conda activate <env-name>
+
+conda install python=3.12
+```
+
+2. To install the required packages run:
 
 ```
 pip install -r requirements.txt
 ```
 
-## How to run your Kedro pipeline
-
-You can run your Kedro project with:
-
+3. To open and run the notebooks, run additionally:
 ```
-kedro run
+pip install ipykernel
+
+python -m ipykernel install --user --name <YOUR ENVIRONMENT> --display-name <YOUR ENVIRONMENT DISPLAY NAME>
+```    
+After the installation you can start a local notebook server:
 ```
-
-## How to test your Kedro project
-
-Have a look at the files `src/tests/test_run.py` and `src/tests/pipelines/data_science/test_pipeline.py` for instructions on how to write your tests. Run the tests as follows:
-
+jupyter notebook
 ```
-pytest
+Make sure to select the above created kernel to run the notebooks.
+
+
+## Getting the best results
+Our best result can be reproduced by running all the cells in the following notebook:
 ```
-
-To configure the coverage threshold, look at the `.coveragerc` file.
-
-## Project dependencies
-
-To see and update the dependency requirements for your project use `requirements.txt`. You can install the project requirements with `pip install -r requirements.txt`.
-
-[Further information about project dependencies](https://docs.kedro.org/en/stable/kedro_project_setup/dependencies.html#project-specific-dependencies)
-
-## How to work with Kedro and notebooks
-
-> Note: Using `kedro jupyter` or `kedro ipython` to run your notebook provides these variables in scope: `catalog`, `context`, `pipelines` and `session`.
->
-> Jupyter, JupyterLab, and IPython are already included in the project requirements by default, so once you have run `pip install -r requirements.txt` you will not need to take any extra steps before you use them.
-
-### Jupyter
-To use Jupyter notebooks in your Kedro project, you need to install Jupyter:
-
-```
-pip install jupyter
+notebooks\<notebook_name>
 ```
 
-After installing Jupyter, you can start a local notebook server:
-
-```
-kedro jupyter notebook
-```
-
-### JupyterLab
-To use JupyterLab, you need to install it:
-
-```
-pip install jupyterlab
-```
-
-You can also start JupyterLab:
-
-```
-kedro jupyter lab
-```
-
-### IPython
-And if you want to run an IPython session:
-
-```
-kedro ipython
-```
-
-### How to ignore notebook output cells in `git`
-To automatically strip out all output cell contents before committing to `git`, you can use tools like [`nbstripout`](https://github.com/kynan/nbstripout). For example, you can add a hook in `.git/config` with `nbstripout --install`. This will run `nbstripout` before anything is committed to `git`.
-
-> *Note:* Your output cells will be retained locally.
-
-## Package your Kedro project
-
-[Further information about building project documentation and packaging your project](https://docs.kedro.org/en/stable/tutorial/package_a_project.html)
+Upon running all the contents, an ouput file in the submission format will appear in the same folder.
+To submit the solution to the competition upload the output file.
