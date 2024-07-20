@@ -37,9 +37,11 @@ Make sure to select the above created kernel to run the notebooks.
 
 
 ## Getting the best results
-Our best result can be reproduced by running all the cells in the following notebook:
+Our best results can be reproduced by running all the cells in the following notebooks:
 ```
-notebooks\<notebook_name>
+notebooks\July-19-Model-both-cities
+
+notebooks\model_by_city
 ```
 
 Upon running all the contents, an ouput file in the submission format will appear in the same folder.
